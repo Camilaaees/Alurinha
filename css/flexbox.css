@@ -1,0 +1,137 @@
+/*Versão DESKTOP*/
+
+.cabecalhoPrincipal .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecalhoPrincipal-nav {
+    display: flex;
+}
+
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm {
+    width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    display: flex;
+}
+
+.rodapePrincipal-navMap-list {
+    display: flex;
+    /*flex-direction: column;
+    flex-wrap: wrap;*/
+    flex-flow: column wrap;
+    height: 255px;
+}
+
+.conteudoPrincipal-cursos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conteudoPrincipal-cursos-link {
+    width: 23%;
+}
+
+/*n começa a contar do 0*/
+.conteudoPrincipal-cursos-link:nth-child(4n) /* vai pegar os blocos (números) que são múltiplos de 4*/ { 
+    margin-right: 0;
+}
+
+.conteudoPrincipal-cursos-link:nth-child(4n+1) /* vai pegar os blocos (números) que são múltiplos de 4+1 (5)*/ {
+    margin-left: 0;
+}
+
+.videoSobre .container {
+    display: flex;
+}
+
+.videoSobre-sobre {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2; /*"cresce" e faz com que ocupe todo o espaço vazio*/
+}
+
+.videoSobre-sobre-list {
+    flex-grow: 1; /* o padrãoe é 1, se for 0, ele não vai aumentar, vai se manter o mesmo, mesmo mudando o responsivo)*/
+}
+
+.videoSobre-video {
+    flex-grow: 1; /*divide o espaço*/
+    flex-shrink: 2; /*Diminui o elemento (dependendo do número que for colocado, se for 2, 
+    vai diminuir 2 vezes mais que os outros) conforme ajusta o responsivo, se for 0 ele não 
+    vai diminuir conforme diminui o responsivo*/
+    /*flex = atalho para flex grow + flex shrink, nessa mesma ordem por exemplo: flex: 0(grow) 1(shrink)*/
+}
+
+/*Versão MOBILE*/
+
+@media (max-width: 768px) {
+.cabecalhoPrincipal-nav {
+    flex-direction: column;
+}
+
+.cabecalhoPrincipal .container {
+    flex-direction: column;
+    align-items: initial;
+    text-align: center;
+}
+
+.conteudoPrincipal-cursos {
+    flex-direction: column;
+}
+
+.conteudoPrincipal-cursos-link {
+    width: 100%;
+}
+
+.rodapePrincipal-navMap-list {
+    height: auto;
+}
+
+.rodapePrincipal-patrocinadores .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    margin: 0;
+    width: 100%;
+}
+
+.rodapePrincipal-contatoForm {
+    width: 100%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    justify-content: center;
+}
+
+.cabecalhoPrincipal-nav-link-app {
+    order: -1; /*o padrão é order:0, por isso tem que ser um número menor para que ele fique na primeira posição*/
+}
+
+.videoSobre .container {
+    flex-direction: column;
+}
+
+.videoSobre-video {
+    margin: 0 auto;
+}
+}
